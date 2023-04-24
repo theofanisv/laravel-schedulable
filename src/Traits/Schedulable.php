@@ -23,7 +23,7 @@ trait Schedulable
      */
     public function initializeSchedulable()
     {
-        $this->dates[] = $this->getScheduleAtColumn();
+        $this->casts[$this->getScheduleAtColumn()] = 'datetime';
         $this->addObservableEvents([
             'scheduling',
             'scheduled',
